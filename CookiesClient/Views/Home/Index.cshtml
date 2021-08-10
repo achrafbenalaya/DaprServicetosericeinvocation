@@ -1,0 +1,38 @@
+﻿@model IEnumerable<Cookies>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core and Dapr</a>.</p>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>GUID</th>
+            <th>Name</th>
+            <th>Date (C)</th>
+            <th>Picture</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var cookie in @Model)
+        {
+        <tr>
+            <td>@cookie.ID</td>
+            <td>@cookie.Name</td>
+            <td>@cookie.Date</td>
+            <td>
+                <div style="margin: 0 auto; width: 90px">
+                    <img src=@cookie.ImageUrl     alt="me" style="width: 90px" />
+                </div>
+
+            </td>
+
+        </tr>
+        }
+    </tbody>
+</table>
